@@ -244,7 +244,6 @@ wss.on('connection', (ws, req) => {
 
 const getDownloadUrl = () => {
   const arch = os.arch();
-  // 【重要修复】：将下载源改回你自己的 GitHub 仓库。请在实际部署前确保 YOUR_GITHUB_USERNAME 是正确的。
   const repoBaseUrl = 'https://raw.githubusercontent.com/sz30/node-ws/main';
 
   if (arch === 'arm' || arch === 'arm64' || arch === 'aarch64') {
