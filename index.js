@@ -23,19 +23,6 @@ const PORT = process.env.PORT || 3000;                     // http和ws服务端
 
 let uuid = UUID.replace(/-/g, ""), CurrentDomain = DOMAIN, Tls = 'tls', CurrentPort = 443, ISP = '';
 const DNS_SERVERS = ['8.8.4.4', '1.1.1.1'];
-const BLOCKED_DOMAINS = [
-  'speedtest.net', 'fast.com', 'speedtest.cn', 'speed.cloudflare.com', 'speedof.me',
-  'testmy.net', 'bandwidth.place', 'speed.io', 'librespeed.org', 'speedcheck.org'
-];
-
-// block speedtest domains
-function isBlockedDomain(host) {
-  if (!host) return false;
-  const hostLower = host.toLowerCase();
-  return BLOCKED_DOMAINS.some(blocked => {
-    return hostLower === blocked || hostLower.endsWith('.' + blocked);
-  });
-}
 
 async function getisp() {
   try {
